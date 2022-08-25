@@ -1,0 +1,49 @@
+акцояихлос orismos_sinartisis_2
+дедолема 
+   a,b,c,out1,out2,out3,sum: INTEGER;
+
+сумаятгсг square(x): INTEGER	
+диепажг				
+   еисодос			 
+      x: INTEGER;			  
+   енодос			
+      square: INTEGER;
+аявг				
+   square:=x*x;			
+текос-сумаятгсгс
+   
+   
+сумаятгсг cube(x): INTEGER	
+диепажг				
+   еисодос			 
+      x: INTEGER;			  
+   енодос			
+      cube: INTEGER;
+аявг				
+   cube:=x*x*x;			
+текос-сумаятгсгс
+
+   
+сумаятгсг f(x): INTEGER	
+диепажг				
+   еисодос		 
+      x: INTEGER;			  
+   енодос			
+      f: INTEGER;
+аявг				
+   f:=2*x+1;			
+текос-сумаятгсгс
+
+аявг
+   диабасе(a);
+   out1:=square(a);
+   
+   диабасе(b);
+   out2:=square(b);
+   
+   диабасе(c);
+   out3:=square(c);
+   
+   sum:=out1+out2+out3;	
+   тупысе(EOLN,sum);
+текос

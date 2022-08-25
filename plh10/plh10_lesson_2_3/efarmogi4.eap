@@ -1,0 +1,20 @@
+акцояихлос deuterolepta
+дедолема
+  SEC,MIN,HOURS: INTEGER;
+
+аявг
+
+  тупысе("еисацете пкгхос деутеяокептым: ");
+  диабасе(SEC);
+
+  HOURS:=SEC DIV 3600;
+  SEC:=SEC MOD 3600;
+
+  MIN:=SEC DIV 60;
+  SEC:=SEC MOD 60;
+
+  тупысе("ыяес: ", HOURS);
+  тупысе(EOLN,"кепта: ", MIN);
+  тупысе(EOLN,"деутеяокепта: ", SEC);
+
+текос

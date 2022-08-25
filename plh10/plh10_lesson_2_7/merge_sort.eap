@@ -1,0 +1,179 @@
+акцояихлос merge_sort
+стахеяес
+	MAX_N=10;
+дедолема 
+	P: ARRAY[1..MAX_N] OF INTEGER;
+    SIZE,in: INTEGER;
+	exit2: BOOLEAN;
+
+	
+сумаятгсг get_integer(start,finish): INTEGER	
+диепажг				
+   еисодос			 
+      start,finish: INTEGER;			  
+   енодос			
+      get_integer: INTEGER;
+дедолема
+		x:INTEGER;
+аявг				
+   
+	епамакабе
+		тупысе ("дЧСЕ щМАМ АЯИХЛЭ АПЭ ", start, " щЫР ", finish, ": ");
+		диабасе(x);
+		
+		еам (x<start OR x>finish) тоте
+			тупысе("кэХОР ЕъСОДОР. ");
+		еам-текос
+	левяи (x>=start AND x<=finish)
+	
+	get_integer:=x;
+текос-сумаятгсгс
+
+	
+	
+диадийасиа read_array(%PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+   енодос			
+      PIN: ARRAY[1..MAX_N] OF INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	циа i:=1 еыс N епамакабе
+		тупысе("дЧСЕ ТОМ ", i, "-О АЯИХЛЭ: ");
+		диабасе(PIN[i]);
+	циа-текос
+текос-диадийасиас
+
+
+
+диадийасиа print_array(PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	тупысе(EOLN,"PIN=[");
+	циа i:=1 еыс N епамакабе
+		тупысе (PIN[i], " ");
+	циа-текос
+	тупысе("]");
+текос-диадийасиас
+
+диадийасиа swap(%x,%y)
+диепажг				
+   еисодос			 
+      x,y: INTEGER;			  
+   енодос			
+      x,y: INTEGER;
+дедолема
+	temp: INTEGER;
+аявг				
+	temp:=x;
+	x:=y;
+	y:=temp;
+текос-диадийасиас
+
+диадийасиа merge(%PIN,start,finish)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  start,finish: INTEGER;
+   енодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+дедолема
+	C: ARRAY[1..MAX_N] OF INTEGER;
+	middle: INTEGER;
+	i,j,k:INTEGER;
+	n: INTEGER;
+	m: INTEGER;
+аявг
+	middle:=(start+finish) DIV 2;
+	/* 1ОР ПъМАЙАР PIN[start...middle]*/
+	i:=start;
+	n:=middle;
+	/* 2ОР ПъМАЙАР PIN[middle+1...finish]*/
+	j:=middle+1;
+	m:=finish;
+	/* C: СУЦВЫМЕУЛщМОР ПъМАЙАР */
+	k:=1;
+	емосы (i<=n AND j<=m) епамакабе
+		еам (PIN[i]<PIN[j]) тоте
+			C[k]:=PIN[i];
+			k:=k+1;
+			i:=i+1;
+		аккиыс
+			C[k]:=PIN[j];
+			k:=k+1;
+			j:=j+1;		
+		еам-текос
+	емосы-текос
+	
+	еам (i=n+1) тоте /* еНАМТКчХГЙЕ О 1ОР ПъМАЙАР */
+		емосы (j<=m) епамакабе
+			C[k]:=PIN[j];
+			k:=k+1;
+			j:=j+1;
+		емосы-текос
+	аккиыс /* еНАМТКчХГЙЕ О 2ОР ПъМАЙАР */
+		емосы (i<=n) епамакабе
+			C[k]:=PIN[i];
+			k:=k+1;
+			i:=i+1;
+		емосы-текос
+	еам-текос
+	
+	/* аМТИЦЯАЖч ТОУ C СТОМ PIN */
+	k:=1;
+	i:=start;
+	емосы (i<=finish) епамакабе
+		PIN[i]:=C[k];
+		i:=i+1;
+		k:=k+1;
+	емосы-текос
+текос-диадийасиас
+
+
+диадийасиа merge_sort(%PIN,start,finish)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  start,finish: INTEGER;
+   енодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+дедолема
+	middle: INTEGER;
+аявг			
+	еам (start<finish) тоте
+		еам (start+1=finish) тоте /* 2 СТОИВЕъА */
+			еам (PIN[start]>PIN[finish]) тоте
+				упокоцисе swap(%PIN[start],%PIN[finish]);
+			еам-текос
+		аккиыс  /* ПЕЯИССЭТЕЯА АПЭ 2 СТОИВЕъА */
+			middle:=(start+finish) DIV 2;
+			упокоцисе merge_sort(%PIN,start,middle);
+			упокоцисе merge_sort(%PIN,middle+1,finish);
+			упокоцисе merge(%PIN,start,finish);
+		еам-текос
+	еам-текос
+текос-диадийасиас
+
+
+аявг
+	
+	тупысе(EOLN, "лецехос пимайа. ");
+	SIZE:=get_integer(5,10);
+
+	упокоцисе read_array(%P,SIZE);
+	
+	упокоцисе print_array(P,SIZE);
+
+	упокоцисе merge_sort(%P,1,SIZE);
+		
+	упокоцисе print_array(P,SIZE);
+	
+текос

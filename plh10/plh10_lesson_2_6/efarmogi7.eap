@@ -1,0 +1,207 @@
+акцояихлос efarmogi7
+стахеяес
+	MAX_N=10;
+дедолема 
+	P: ARRAY[1..MAX_N] OF INTEGER;
+    SIZE,in: INTEGER;
+	exit2: BOOLEAN;
+
+	
+сумаятгсг get_integer(start,finish): INTEGER	
+диепажг				
+   еисодос			 
+      start,finish: INTEGER;			  
+   енодос			
+      get_integer: INTEGER;
+дедолема
+		x:INTEGER;
+аявг				
+   
+	епамакабе
+		тупысе ("дЧСЕ щМАМ АЯИХЛЭ АПЭ ", start, " щЫР ", finish, ": ");
+		диабасе(x);
+		
+		еам (x<start OR x>finish) тоте
+			тупысе("кэХОР ЕъСОДОР. ");
+		еам-текос
+	левяи (x>=start AND x<=finish)
+	
+	get_integer:=x;
+текос-сумаятгсгс
+
+	
+	
+диадийасиа read_array(%PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+   енодос			
+      PIN: ARRAY[1..MAX_N] OF INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	циа i:=1 еыс N епамакабе
+		тупысе("дЧСЕ ТОМ ", i, "-О АЯИХЛЭ: ");
+		диабасе(PIN[i]);
+	циа-текос
+текос-диадийасиас
+
+
+
+диадийасиа print_array(PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	тупысе(EOLN,"PIN=[");
+	циа i:=1 еыс N епамакабе
+		тупысе (PIN[i], " ");
+	циа-текос
+	тупысе("]");
+текос-диадийасиас
+
+диадийасиа swap(%x,%y)
+диепажг				
+   еисодос			 
+      x,y: INTEGER;			  
+   енодос			
+      x,y: INTEGER;
+дедолема
+	temp: INTEGER;
+аявг				
+	temp:=x;
+	x:=y;
+	y:=temp;
+текос-диадийасиас
+
+
+
+
+диадийасиа selection_sort(%PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+   енодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+дедолема
+	i,j,pos: INTEGER;
+аявг				
+	циа i:=1 еыс N епамакабе
+	   /* аМАФчТГСГ ЕКАВъСТОУ СТИР 
+		  ХщСЕИР j=i+1┘N   */
+	   pos:=i;
+	   циа j:=i+1 еыс N епамакабе
+		  еам (PIN[j]<PIN[pos]) тоте
+			 pos:=j;
+		  еам-текос
+	   циа-текос
+
+	   /* аМТАККАЦч ТОУ ЕКАВъСТОУ ЛЕ 
+		  ТО PIN[i] */
+	   упокоцисе swap(%PIN[i],%PIN[pos]);
+	циа-текос
+текос-диадийасиас
+
+
+
+
+
+диадийасиа insertion_sort(%PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+   енодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+дедолема
+	i,j: INTEGER;
+	check:BOOLEAN;
+аявг				
+	циа i:=2 еыс N епамакабе
+
+		j:=i; 
+		check:=FALSE;
+		
+		емосы (j>=1 AND check=FALSE) епамакабе
+			еам (PIN[j]<PIN[j-1]) тоте
+				упокоцисе swap(%PIN[j],%PIN[j-1]);
+			аккиыс
+				check:=TRUE;
+			еам-текос
+			j:=j-1;
+		емосы-текос
+	циа-текос
+текос-диадийасиас
+
+
+
+диадийасиа bubble_sort(%PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+   енодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+дедолема
+	i,j: INTEGER;
+аявг				
+	циа i:=1 еыс N епамакабе
+	 
+	   циа j:=N еыс i+1 ле-бгла -1 епамакабе
+
+		  еам (PIN[j]<PIN[j-1]) тоте
+			упокоцисе swap(%PIN[j],%PIN[j-1]);
+		  еам-текос
+
+	   циа-текос
+
+	циа-текос
+текос-диадийасиас
+
+
+
+аявг
+	
+	тупысе(EOLN, "лецехос пимайа. ");
+	SIZE:=get_integer(5,10);
+
+	упокоцисе read_array(%P,SIZE);
+	
+	упокоцисе print_array(P,SIZE);
+
+	exit2:=FALSE;
+	емосы (exit2=FALSE) епамакабе
+	
+		тупысе(EOLN, "еПщКЕНЕ АКЦЭЯИХЛО: ");
+		тупысе(EOLN, "1-тАНИМЭЛГСГ ЛЕ еПИКОЦч ");
+		тупысе(EOLN, "2-тАНИМЭЛГСГ ЛЕ еИСАЦЫЦч ");
+		тупысе(EOLN, "3-тАНИМЭЛГСГ жУСАКъДАР ");
+		тупысе(EOLN, "4-╦НОДОР ");
+		тупысе(EOLN, "еПИКОЦч: ");
+		диабасе(in);
+		
+		еам (in=1) тоте
+			упокоцисе selection_sort(%P,SIZE);
+		еам-текос
+
+		еам (in=2) тоте
+			упокоцисе insertion_sort(%P,SIZE);
+		еам-текос	
+		
+		еам (in=3) тоте
+			упокоцисе bubble_sort(%P,SIZE);
+		еам-текос	
+
+		еам (in=4) тоте
+			exit2:=TRUE;
+		еам-текос		
+		
+		упокоцисе print_array(P,SIZE);
+	емосы-текос
+	
+текос

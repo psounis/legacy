@@ -1,0 +1,30 @@
+акцояихлос fibonacci
+дедолема 
+	n,res: INTEGER;
+
+сумаятгсг fibonacci(n): INTEGER	
+диепажг				
+	еисодос			 
+		n: INTEGER;			  
+	енодос			
+		fibonacci: INTEGER;
+дедолема
+	y:INTEGER;
+аявг				
+	еам (n=1 OR n=2) тоте
+		fibonacci:=1;
+	аккиыс
+		fibonacci:=fibonacci(n-1)+fibonacci(n-2);
+	еам-текос
+текос-сумаятгсгс
+
+аявг
+	
+	тупысе(EOLN, "дЧСЕ ТО n: ");
+	диабасе(n);
+	
+	res:=fibonacci(n);
+	
+	тупысе("FIB(n)=",res);
+	
+текос

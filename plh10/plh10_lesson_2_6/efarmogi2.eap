@@ -1,0 +1,90 @@
+акцояихлос efarmogi2
+дедолема 
+    x: INTEGER;
+	out: BOOLEAN;
+
+сумаятгсг is_even(n): BOOLEAN	
+диепажг				
+   еисодос			 
+      n: INTEGER;			  
+   енодос			
+      is_even: BOOLEAN;
+аявг				
+	еам (n MOD 2 = 0) тоте
+		is_even:=TRUE;
+	аккиыс
+		is_even:=FALSE;
+	еам-текос
+текос-сумаятгсгс
+
+сумаятгсг is_odd(n): BOOLEAN	
+диепажг				
+   еисодос			 
+      n: INTEGER;			  
+   енодос			
+      is_odd: BOOLEAN;
+аявг				
+	еам (n MOD 2 = 1) тоте
+		is_odd:=TRUE;
+	аккиыс
+		is_odd:=FALSE;
+	еам-текос
+текос-сумаятгсгс
+
+сумаятгсг is_square(n): BOOLEAN	
+диепажг				
+   еисодос			 
+      n: INTEGER;			  
+   енодос			
+      is_square: BOOLEAN;
+дедолема
+	i:INTEGER;
+аявг				
+	is_square:=FALSE;
+	циа i:=0 еыс n епамакабе
+		еам (i*i=n) тоте
+			is_square:=TRUE;
+		еам-текос
+	циа-текос
+текос-сумаятгсгс
+
+сумаятгсг is_cube(n): BOOLEAN	
+диепажг				
+   еисодос			 
+      n: INTEGER;			  
+   енодос			
+      is_cube: BOOLEAN;
+дедолема
+	i:INTEGER;
+аявг				
+	is_cube:=FALSE;
+	циа i:=0 еыс n епамакабе
+		еам (i*i*i=n) тоте
+			is_cube:=TRUE;
+		еам-текос
+	циа-текос
+текос-сумаятгсгс
+
+аявг
+	тупысе("еИСэЦЕТЕ ТОМ АЯИХЛЭ: ");
+	диабасе(x);
+	out:=is_even(x);
+	еам (out=TRUE) тоте
+		тупысе(EOLN,"еъМАИ ╒ЯТИОР.");
+	еам-текос
+  
+	out:=is_odd(x);
+	еам (out=TRUE) тоте
+		тупысе(EOLN,"еъМАИ пЕЯИТТЭР.");
+	еам-текос
+  
+	out:=is_square(x);
+	еам (out=TRUE) тоте
+		тупысе(EOLN,"еъМАИ тЕТЯАЦЫМО аЯИХЛОЩ.");
+	еам-текос
+  
+	out:=is_cube(x);
+	еам (out=TRUE) тоте
+		тупысе(EOLN,"еъМАИ йЩБОР аЯИХЛОЩ.");
+	еам-текос
+текос

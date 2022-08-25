@@ -1,0 +1,20 @@
+акцояихлос orismos_sinartisis
+дедолема 
+   a,b: INTEGER;
+
+сумаятгсг cube(x): INTEGER	
+диепажг				
+   еисодос			 
+      x: INTEGER;			  
+   енодос			
+      cube: INTEGER;
+аявг				
+   cube:=x*x*x;			
+текос-сумаятгсгс
+
+аявг
+   диабасе(a);
+
+   b:=cube(a);				
+   тупысе(EOLN,b);
+текос

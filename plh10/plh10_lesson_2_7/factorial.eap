@@ -1,0 +1,31 @@
+акцояихлос factorial
+дедолема 
+	n,res: INTEGER;
+
+сумаятгсг factorial(n): INTEGER	
+диепажг				
+	еисодос			 
+		n: INTEGER;			  
+	енодос			
+		factorial: INTEGER;
+дедолема
+	y:INTEGER;
+аявг				
+	еам (n=1) тоте
+		factorial:=1;
+	аккиыс
+		y:=factorial(n-1);
+		factorial:=n*y;
+	еам-текос
+текос-сумаятгсгс
+
+аявг
+	
+	тупысе(EOLN, "дЧСЕ ТО n: ");
+	диабасе(n);
+	
+	res:=factorial(n);
+	
+	тупысе(n,"!=",res);
+	
+текос

@@ -1,0 +1,152 @@
+акцояихлос quick_sort
+стахеяес
+	MAX_N=10;
+дедолема 
+	P: ARRAY[1..MAX_N] OF INTEGER;
+    SIZE,in: INTEGER;
+	exit2: BOOLEAN;
+
+	
+сумаятгсг get_integer(start,finish): INTEGER	
+диепажг				
+   еисодос			 
+      start,finish: INTEGER;			  
+   енодос			
+      get_integer: INTEGER;
+дедолема
+		x:INTEGER;
+аявг				
+   
+	епамакабе
+		тупысе ("дЧСЕ щМАМ АЯИХЛЭ АПЭ ", start, " щЫР ", finish, ": ");
+		диабасе(x);
+		
+		еам (x<start OR x>finish) тоте
+			тупысе("кэХОР ЕъСОДОР. ");
+		еам-текос
+	левяи (x>=start AND x<=finish)
+	
+	get_integer:=x;
+текос-сумаятгсгс
+
+	
+	
+диадийасиа read_array(%PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+   енодос			
+      PIN: ARRAY[1..MAX_N] OF INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	циа i:=1 еыс N епамакабе
+		тупысе("дЧСЕ ТОМ ", i, "-О АЯИХЛЭ: ");
+		диабасе(PIN[i]);
+	циа-текос
+текос-диадийасиас
+
+
+
+диадийасиа print_array(PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	тупысе(EOLN,"PIN=[");
+	циа i:=1 еыс N епамакабе
+		тупысе (PIN[i], " ");
+	циа-текос
+	тупысе("]");
+текос-диадийасиас
+
+диадийасиа swap(%x,%y)
+диепажг				
+   еисодос			 
+      x,y: INTEGER;			  
+   енодос			
+      x,y: INTEGER;
+дедолема
+	temp: INTEGER;
+аявг				
+	temp:=x;
+	x:=y;
+	y:=temp;
+текос-диадийасиас
+
+
+
+
+сумаятгсг partition(%PIN,start,finish):INTEGER
+диепажг				
+	еисодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		start,finish: INTEGER;
+	енодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		partition: INTEGER;
+	дедолема
+		pivot,i,j: INTEGER;
+		stop: BOOLEAN;
+аявг
+	pivot:=PIN[start];
+	i:=start-1;
+	j:=finish+1;
+	stop:=FALSE;
+	емосы (stop=FALSE) епамакабе
+		епамакабе
+			j:=j-1;
+		левяи (PIN[j]<=pivot)
+
+		епамакабе
+			i:=i+1;
+		левяи (PIN[i]>=pivot)
+	
+		еам (i<j) тоте
+			упокоцисе swap(%PIN[i],%PIN[j]);
+		аккиыс
+			stop:=TRUE;
+			partition:=j;
+		еам-текос
+	емосы-текос
+текос-сумаятгсгс
+
+
+
+диадийасиа quick_sort(%PIN,start,finish)
+диепажг				
+	еисодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		start,finish: INTEGER;
+	енодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	дедолема
+		odigo,middle,pos: INTEGER;
+аявг				
+	еам (start<finish) тоте
+		pos:=partition(%PIN,start,finish); /* дИАЛщЯИСГ ТОУ ПъМАЙА */
+		упокоцисе quick_sort(%PIN,start,pos); /* аМАДЯОЛч СТОМ АЯИСТЕЯЭ УПОПъМАЙА */
+		упокоцисе quick_sort(%PIN,pos+1,finish);/* аМАДЯОЛч СТОМ ДЕНИЭ УПОПъМАЙА */
+	еам-текос
+текос-диадийасиас
+
+
+
+аявг
+	
+	тупысе(EOLN, "лецехос пимайа. ");
+	SIZE:=get_integer(5,10);
+
+	упокоцисе read_array(%P,SIZE);
+	
+	упокоцисе print_array(P,SIZE);
+
+	упокоцисе quick_sort(%P,1,SIZE);
+		
+	упокоцисе print_array(P,SIZE);
+	
+текос

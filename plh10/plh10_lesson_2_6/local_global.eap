@@ -1,0 +1,46 @@
+акцояихлос local_global
+дедолема
+   x,ret:INTEGER;  /* Katholiki metavliti:   
+                  Tin vlepoun oloi */
+
+сумаятгсг f1(): INTEGER
+диепажг
+   еисодос
+   енодос
+      f1: INTEGER;
+дедолема
+   a,x:INTEGER; /* Topikes metavlites tis 
+                   f1*/
+аявг
+   a:=2;
+   x:=0;
+   /* Exoyme diplo onoma stin x. 
+      Epikratei to topiko onoma */      
+   тупысе(EOLN,"f1: a=",a,",x=",x);
+   f1:=0;
+текос-сумаятгсгс
+
+сумаятгсг f2(): INTEGER
+диепажг
+   еисодос
+   енодос
+      f2: INTEGER;
+дедолема
+   a:INTEGER; /* Topikes metavlites 
+                   tis f2*/
+аявг
+   a:=8;
+   x:=7; /*Anaferetai sti katholiki x */ 
+   тупысе(EOLN,"f2: a=",a,",x=",x);
+   f2:=0;
+текос-сумаятгсгс
+
+
+аявг
+   x:=5;
+   тупысе(EOLN,"акц: x=",x);
+   ret:=f1();
+   тупысе(EOLN,"акц: x=",x);
+   ret:=f2();
+   тупысе(EOLN,"акц: x=",x);
+текос

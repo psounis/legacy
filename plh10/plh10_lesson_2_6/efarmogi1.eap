@@ -1,0 +1,36 @@
+акцояихлос efarmogi1
+дедолема 
+   a,b,n: INTEGER;
+
+сумаятгсг get_integer(start,finish): INTEGER	
+диепажг				
+   еисодос			 
+      start,finish: INTEGER;			  
+   енодос			
+      get_integer: INTEGER;
+дедолема
+		x:INTEGER;
+аявг				
+   
+	епамакабе
+		тупысе ("дЧСЕ щМАМ АЯИХЛЭ АПЭ ", start, " щЫР ", finish, ": ");
+		диабасе(x);
+		
+		еам (x<start OR x>finish) тоте
+			тупысе("кэХОР ЕъСОДОР. ");
+		еам-текос
+	левяи (x>=start AND x<=finish)
+	
+	get_integer:=x;
+текос-сумаятгсгс
+
+аявг
+   тупысе("дЧСЕ ТО А.");
+   a:=get_integer(1,10);
+   тупысе("дЧСЕ ТО b.");
+   b:=get_integer(1,10);
+   тупысе("дЧСЕ ТО n.");
+   n:=get_integer(2,5);
+   
+   тупысе("тО АПОТщКЕСЛА ЕъМАИ:", n*(a-b));
+текос

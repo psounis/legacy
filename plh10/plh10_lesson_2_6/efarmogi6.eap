@@ -1,0 +1,165 @@
+акцояихлос efarmogi6
+стахеяес
+	MAX_N=10;
+дедолема 
+	P: ARRAY[1..MAX_N] OF INTEGER;
+    SIZE,stoixeio,in: INTEGER;
+	out: BOOLEAN;
+
+	
+сумаятгсг get_integer(start,finish): INTEGER	
+диепажг				
+   еисодос			 
+      start,finish: INTEGER;			  
+   енодос			
+      get_integer: INTEGER;
+дедолема
+		x:INTEGER;
+аявг				
+   
+	епамакабе
+		тупысе ("дЧСЕ щМАМ АЯИХЛЭ АПЭ ", start, " щЫР ", finish, ": ");
+		диабасе(x);
+		
+		еам (x<start OR x>finish) тоте
+			тупысе("кэХОР ЕъСОДОР. ");
+		еам-текос
+	левяи (x>=start AND x<=finish)
+	
+	get_integer:=x;
+текос-сумаятгсгс
+
+	
+	
+диадийасиа read_array(%PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+   енодос			
+      PIN: ARRAY[1..MAX_N] OF INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	циа i:=1 еыс N епамакабе
+		тупысе("дЧСЕ ТОМ ", i, "-О АЯИХЛЭ: ");
+		диабасе(PIN[i]);
+	циа-текос
+текос-диадийасиас
+
+
+
+диадийасиа print_array(PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	тупысе(EOLN,"PIN=[");
+	циа i:=1 еыс N епамакабе
+		тупысе (PIN[i], " ");
+	циа-текос
+	тупысе("]");
+текос-диадийасиас
+
+
+
+сумаятгсг linear_search(PIN,N,x): BOOLEAN	
+диепажг				
+	еисодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		N: INTEGER;
+		x: INTEGER;
+	енодос			
+		linear_search: BOOLEAN;
+дедолема
+		check:BOOLEAN;
+		i:INTEGER;
+аявг				
+   
+	check:=FALSE; 
+
+	циа i:=1 еыс N епамакабе
+		еам (x=PIN[i]) тоте
+			check:=TRUE;
+		еам-текос
+	циа-текос
+	
+	linear_search:=check;
+текос-сумаятгсгс
+
+
+
+сумаятгсг binary_search(PIN,N,x): BOOLEAN	
+диепажг				
+	еисодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		N: INTEGER;
+		x: INTEGER;
+	енодос			
+		binary_search: BOOLEAN;
+дедолема
+		check:BOOLEAN;
+		start,finish,middle:INTEGER;
+		i:INTEGER;
+аявг				
+   
+	check:=FALSE; 
+	start:=1;
+	finish:=N;
+	емосы (start<=finish AND check=FALSE) епамакабе
+		middle:=(start+finish) DIV 2;
+		еам (x=PIN[middle]) тоте
+			check:=TRUE;
+		аккиыс
+			еам (x>PIN[middle]) тоте
+				start:=middle+1;
+			аккиыс
+				finish:=middle-1;
+			еам-текос
+		еам-текос
+	емосы-текос
+	
+	binary_search:=check;
+текос-сумаятгсгс
+
+
+аявг
+	
+	тупысе(EOLN, "лецехос пимайа. ");
+	SIZE:=get_integer(5,10);
+
+	упокоцисе read_array(%P,SIZE);
+	
+	упокоцисе print_array(P,SIZE);
+
+	тупысе(EOLN,EOLN,"дЧСЕ ТО ПЯОР АМАФчТГСГ СТОИВЕъО: ");
+	диабасе(stoixeio);
+	
+	тупысе(EOLN, "еПщКЕНЕ АКЦЭЯИХЛО: ");
+	тупысе(EOLN, "1-сЕИЯИАЙч аМАФчТГСГ ");
+	тупысе(EOLN, "2-дУАДИЙч аМАФчТГСГ ");
+	тупысе(EOLN, "еПИКОЦч: ");
+	диабасе(in);
+	
+	еам (in=1) тоте
+		out:=linear_search(P,SIZE,stoixeio);
+		
+		еам (out=TRUE) тоте
+			тупысе ("тО СТОИВЕъО БЯщХГЙЕ ЛЕ ТГ СЕИЯИАЙч АМАФчТГСГ!");
+		аккиыс
+			тупысе ("тО СТОИВЕъО ДЕМ БЯщХГЙЕ ЛЕ ТГ СЕИЯИАЙч АМАФчТГСГ!");
+		еам-текос
+	аккиыс
+		out:=binary_search(P,SIZE,stoixeio);
+		
+		еам (out=TRUE) тоте
+			тупысе ("тО СТОИВЕъО БЯщХГЙЕ ЛЕ ТГ ДУАДИЙч АМАФчТГСГ!");
+		аккиыс
+			тупысе ("тО СТОИВЕъО ДЕМ БЯщХГЙЕ ЛЕ ТГ ДУАДИЙч АМАФчТГСГ!");
+		еам-текос
+	еам-текос
+	
+текос

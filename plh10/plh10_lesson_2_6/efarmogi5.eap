@@ -1,0 +1,198 @@
+акцояихлос efarmogi5
+стахеяес
+	MAX_N=10;
+дедолема 
+	P: ARRAY[1..MAX_N] OF INTEGER;
+    SIZE,out: INTEGER;
+	outReal: REAL;
+
+	
+сумаятгсг get_integer(start,finish): INTEGER	
+диепажг				
+   еисодос			 
+      start,finish: INTEGER;			  
+   енодос			
+      get_integer: INTEGER;
+дедолема
+		x:INTEGER;
+аявг				
+   
+	епамакабе
+		тупысе ("дЧСЕ щМАМ АЯИХЛЭ АПЭ ", start, " щЫР ", finish, ": ");
+		диабасе(x);
+		
+		еам (x<start OR x>finish) тоте
+			тупысе("кэХОР ЕъСОДОР. ");
+		еам-текос
+	левяи (x>=start AND x<=finish)
+	
+	get_integer:=x;
+текос-сумаятгсгс
+
+	
+	
+диадийасиа read_array(%PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+   енодос			
+      PIN: ARRAY[1..MAX_N] OF INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	циа i:=1 еыс N епамакабе
+		тупысе("дЧСЕ ТОМ ", i, "-О АЯИХЛЭ: ");
+		диабасе(PIN[i]);
+	циа-текос
+текос-диадийасиас
+
+
+
+диадийасиа print_array(PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	тупысе(EOLN,"PIN=[");
+	циа i:=1 еыс N епамакабе
+		тупысе (PIN[i], " ");
+	циа-текос
+	тупысе("]");
+текос-диадийасиас
+
+
+сумаятгсг min_array(PIN,N): INTEGER	
+диепажг				
+	еисодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		N: INTEGER;			  
+	енодос			
+		min_array: INTEGER;
+дедолема
+		min,i:INTEGER;
+аявг				
+	min:=PIN[1];
+
+	циа i:=2 еыс N епамакабе
+		еам (PIN[i] < min) тоте
+			min:=PIN[i];
+		еам-текос
+	циа-текос
+
+	min_array:=min;
+текос-сумаятгсгс
+
+
+сумаятгсг max_array(PIN,N): INTEGER	
+диепажг				
+	еисодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		N: INTEGER;			  
+	енодос			
+		max_array: INTEGER;
+дедолема
+		max,i:INTEGER;
+аявг				
+	max:=PIN[1];
+
+	циа i:=2 еыс N епамакабе
+		еам (PIN[i] > max) тоте
+			max:=PIN[i];
+		еам-текос
+	циа-текос
+
+	max_array:=max;
+текос-сумаятгсгс
+
+
+
+сумаятгсг sum_array(PIN,N): INTEGER	
+диепажг				
+	еисодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		N: INTEGER;			  
+	енодос			
+		sum_array: INTEGER;
+дедолема
+		sum,i:INTEGER;
+аявг				
+	sum:=0;
+
+	циа i:=1 еыс N епамакабе
+		sum:=sum+PIN[i];
+	циа-текос
+
+	sum_array:=sum;
+текос-сумаятгсгс
+
+
+
+сумаятгсг prod_array(PIN,N): INTEGER	
+диепажг				
+	еисодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		N: INTEGER;			  
+	енодос			
+		prod_array: INTEGER;
+дедолема
+		prod,i:INTEGER;
+аявг				
+	prod:=1;
+
+	циа i:=1 еыс N епамакабе
+		prod:=prod*PIN[i];
+	циа-текос
+
+	prod_array:=prod;
+текос-сумаятгсгс
+
+
+
+
+сумаятгсг mo_array(PIN,N): REAL	
+диепажг				
+	еисодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		N: INTEGER;			  
+	енодос			
+		mo_array: REAL;
+дедолема
+		i,sum:INTEGER;
+аявг				
+	sum:=0;
+
+	циа i:=1 еыс N епамакабе
+		sum:=sum+PIN[i];
+	циа-текос
+
+	mo_array:=sum/N;
+текос-сумаятгсгс
+
+аявг
+	
+	тупысе(EOLN, "лецехос пимайа. ");
+	SIZE:=get_integer(5,10);
+
+	упокоцисе read_array(%P,SIZE);
+	
+	упокоцисе print_array(P,SIZE);
+
+	out:=min_array(P,SIZE);
+	тупысе(EOLN, "о ЕКэВИСТОР ЕъМАИ ТО: ", out);
+	
+	out:=max_array(P,SIZE);
+	тупысе(EOLN, "о ЛщЦИСТОР ЕъМАИ ТО: ", out);
+	
+	out:=sum_array(P,SIZE);
+	тупысе(EOLN, "тО эХЯОИСЛА ЕъМАИ ТО: ", out);
+	
+	out:=prod_array(P,SIZE);
+	тупысе(EOLN, "тО ЦИМЭЛЕМО ЕъМАИ ТО: ", out);
+	
+	outReal:=mo_array(P,SIZE);
+	тупысе(EOLN, "о ЛщСОР ЭЯОР ЕъМАИ: ", outReal);
+текос

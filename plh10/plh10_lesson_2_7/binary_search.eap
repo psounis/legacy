@@ -1,0 +1,114 @@
+акцояихлос binary_search
+стахеяес
+	MAX_N=10;
+дедолема 
+	P: ARRAY[1..MAX_N] OF INTEGER;
+    SIZE,stoixeio,in: INTEGER;
+	out: BOOLEAN;
+
+сумаятгсг get_integer(start,finish): INTEGER	
+диепажг				
+   еисодос			 
+      start,finish: INTEGER;			  
+   енодос			
+      get_integer: INTEGER;
+дедолема
+		x:INTEGER;
+аявг				
+   
+	епамакабе
+		тупысе ("дЧСЕ щМАМ АЯИХЛЭ АПЭ ", start, " щЫР ", finish, ": ");
+		диабасе(x);
+		
+		еам (x<start OR x>finish) тоте
+			тупысе("кэХОР ЕъСОДОР. ");
+		еам-текос
+	левяи (x>=start AND x<=finish)
+	
+	get_integer:=x;
+текос-сумаятгсгс	
+	
+диадийасиа read_array(%PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+   енодос			
+      PIN: ARRAY[1..MAX_N] OF INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	циа i:=1 еыс N епамакабе
+		тупысе("дЧСЕ ТОМ ", i, "-О АЯИХЛЭ: ");
+		диабасе(PIN[i]);
+	циа-текос
+текос-диадийасиас
+
+диадийасиа print_array(PIN,N)
+диепажг				
+   еисодос			 
+      PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+	  N: INTEGER;
+дедолема
+	i: INTEGER;
+аявг				
+	тупысе(EOLN,"PIN=[");
+	циа i:=1 еыс N епамакабе
+		тупысе (PIN[i], " ");
+	циа-текос
+	тупысе("]");
+текос-диадийасиас
+
+	
+сумаятгсг binary_search(PIN,x,start,finish): BOOLEAN	
+диепажг				
+	еисодос			 
+		PIN: ARRAY[1..MAX_N] OF INTEGER;			  
+		x: INTEGER;
+		start,finish: INTEGER;
+	енодос			
+		binary_search: BOOLEAN;
+дедолема
+		check:BOOLEAN;
+		middle:INTEGER;
+аявг
+	тупысе(EOLN,start," ", finish);			
+	еам (start>finish) тоте
+		check:=FALSE;
+	аккиыс
+		middle:=(start+finish) DIV 2;
+		еам (x=PIN[middle]) тоте
+			check:=TRUE;
+		аккиыс
+			еам (x>PIN[middle]) тоте
+				check:=binary_search(PIN,x,middle+1,finish);
+			аккиыс
+				check:=binary_search(PIN,x,start,middle-1);
+			еам-текос
+		еам-текос
+	еам-текос
+	
+	binary_search:=check;
+текос-сумаятгсгс
+
+аявг
+	
+	тупысе(EOLN, "лецехос пимайа. ");
+	SIZE:=get_integer(5,10);
+
+	упокоцисе read_array(%P,SIZE);
+	
+	упокоцисе print_array(P,SIZE);
+
+	тупысе(EOLN,EOLN,"дЧСЕ ТО ПЯОР АМАФчТГСГ СТОИВЕъО: ");
+	диабасе(stoixeio);
+	
+	out:=binary_search(P,stoixeio,1,SIZE);
+	
+	еам (out=TRUE) тоте
+		тупысе ("тО СТОИВЕъО БЯщХГЙЕ ЛЕ ТГ ДУАДИЙч АМАФчТГСГ!");
+	аккиыс
+		тупысе ("тО СТОИВЕъО ДЕМ БЯщХГЙЕ ЛЕ ТГ ДУАДИЙч АМАФчТГСГ!");
+	еам-текос	
+	
+текос
